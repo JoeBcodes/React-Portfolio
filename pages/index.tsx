@@ -6,7 +6,12 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Link from 'next/link'
+import Experience from '@/components/Experience'
+import ContactMe from '@/components/ContactMe'
+import Skills from '@/components/Skills'
+import Projects from '@/components/Projects'
 
+//change Image tags to next/image
  const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
@@ -16,23 +21,31 @@ export default function Home() {
       <Head>
         <title>My Portfolio</title>
        </Head>
-     
       <Header />
-      {/* Hero */}
+  
       <section id="hero" className="snap-start">
        <Hero />
       </section>
      
-      {/* About */}
       <section id="about" className="snap-center">
         <About />
       </section>
-      {/* Experience */}
-      {/* Skills */}
-      {/* Projects */}
-      {/* Contact Me */}
-    </div> 
 
-    
+      <section id="experience" className="snap-center">
+        <Experience />
+      </section>
+     
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
+     
+      <section id="projects" className="snap-center">
+        <Projects />
+      </section>
+     
+      <section id="contact-me" className="snap-center">
+        <ContactMe />
+      </section>
+    </div>
   );
 };
