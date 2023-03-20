@@ -20,12 +20,12 @@ function Hero({}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center
     text-center overflow-hidden">
         <BackgroundCircles />
-        {/* fix with other import thingy 1hr1min */}
-        {/* <img 
+<img 
         className="relative rounded-full h-32 w-32 
         mx-auto object-cover"
-        src="C:/Users/Jbaca/Pictures/profilepic2.jpg" 
-        alt="" /> */} 
+        src="https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+        alt="" />
+
         <div className="z-20">
             <h2 className="text-sm uppercase text-gray-500
              pb-2 tracking-[15px]">
@@ -49,8 +49,7 @@ function Hero({}: Props) {
             </Link>
             <Link href="projects">
             <button className="heroButton">Projects</button>
-            </Link>
-            
+            </Link>   
 
         </div>
     </div>

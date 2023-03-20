@@ -22,8 +22,8 @@ function Header() {
         }}
         className="flex flex-row items-center">
             {/* Social Icons */}
-            <SocialIcon url="https://linkedin.com/in/joe-bacatx" style={{ height: 100, width: 100 }} bgColor="#2565AE" className="mr-10" />
-            <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} bgColor="#2565AE" />
+            <SocialIcon url="https://linkedin.com/in/joe-bacatx" style={{ height: 100, width: 100 }} bgColor="#333399 " className="mr-10" />
+            <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} bgColor="#333399" />
         </motion.div>
         <motion.div
         initial={{
