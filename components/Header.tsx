@@ -1,6 +1,6 @@
-import React from 'react';
-import { SocialIcon } from 'react-social-icons';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { SocialIcon } from 'react-social-icons'
+import { motion } from 'framer-motion'
 
 function Header() {
   return (
@@ -22,8 +22,8 @@ function Header() {
         }}
         className="flex flex-row items-center">
             {/* Social Icons */}
-            <SocialIcon url="https://linkedin.com/in/joe-bacatx" style={{ height: 100, width: 100 }} className="mr-4" />
-            <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} />
+            <SocialIcon url="https://linkedin.com/in/joe-bacatx" style={{ height: 100, width: 100 }} bgColor="#2565AE" className="mr-10" />
+            <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} bgColor="#2565AE" />
         </motion.div>
         <motion.div
         initial={{
