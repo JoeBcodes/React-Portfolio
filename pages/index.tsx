@@ -35,15 +35,15 @@ export default function Home() {
         <Experience />
       </section>
      
-      <section id="skills" className="snap-center">
+      <section id="skills" className="snap-start">
         <Skills />
       </section>
      
-      <section id="projects" className="snap-center">
+      <section id="projects" className="snap-start">
         <Projects />
       </section>
      
-      <section id="contact-me" className="snap-center">
+      <section id="contact-me" className="snap-start">
         <ContactMe />
       </section>
     </div>
