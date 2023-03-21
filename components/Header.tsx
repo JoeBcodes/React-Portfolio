@@ -1,6 +1,7 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 function Header() {
   return (
@@ -25,6 +26,8 @@ function Header() {
             <SocialIcon url="https://linkedin.com/in/joe-bacatx" style={{ height: 100, width: 100 }} bgColor="#333399 " className="mr-10" />
             <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} bgColor="#333399" />
         </motion.div>
+
+        {/* <Link href="#contact-me"> */}
         <motion.div
         initial={{
             x: 500,
@@ -37,9 +40,7 @@ function Header() {
             scale: 1.0,
         }}
         transition={{
-            duration: 1.5, 
-        }}
-
+            duration: 1.5, }}
             className="flex flex-row items-center text-gray-300 cursor pointer">
             <SocialIcon
             className="cursor-pointer"
@@ -49,6 +50,7 @@ function Header() {
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400">Get In Touch</p>
         </motion.div>
+        {/* </Link> */}
     </header>
   );
 }
