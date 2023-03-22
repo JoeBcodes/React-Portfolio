@@ -27,7 +27,7 @@ function Header() {
             <SocialIcon url="https://github.com/JoeBcodes" style={{ height: 100, width: 100 }} bgColor="#333399" />
         </motion.div>
 
-        {/* <Link href="#contact-me"> */}
+        <Link href="#contact-me">
         <motion.div
         initial={{
             x: 500,
@@ -50,7 +50,7 @@ function Header() {
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400">Get In Touch</p>
         </motion.div>
-        {/* </Link> */}
+        </Link>
     </header>
   );
 }
