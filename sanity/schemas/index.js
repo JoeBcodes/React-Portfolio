@@ -1,3 +1,4 @@
+//import { schemaTypes } from 'sanity'
 import experience from './experience'
 import skill from './skill'
 import pageInfo from './pageInfo'

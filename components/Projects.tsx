@@ -1,11 +1,15 @@
 import React from 'react'
 import {motion} from 'framer-motion'
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
+function Projects({projects }: Props) {
 
-  const projects = [1, 2, 3, 4, 5];
+ // const projects = [1, 2, 3, 4, 5];
   return (
     
     <motion.div 
@@ -20,7 +24,7 @@ function Projects({}: Props) {
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
       snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div key={project} className="w-screen flex-shrink-0 snap-center
           flex-col space-y-5 items-center justify-center
           p-20 md:p-44 h-screen">
@@ -34,7 +38,8 @@ function Projects({}: Props) {
             }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-              src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src={urlFor(project?.image).url()}
+              // "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
               />
          
@@ -44,18 +49,31 @@ function Projects({}: Props) {
                   <span className="underline decoration-[#F7AB0A]/50">
                     Case Study {i + 1} of {projects.length}:
                   </span>{" "}
-                  UPS clone
+                  {project?.title}
+                  {/* UPS clone */}
                 </h4>
 
+                <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map((technology) => (
+                  <img 
+                    className="h-10 w-10"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                    />
+                ))}
+                </div>
+
                 <p className="text-lg text-center md:text-left">
-                « Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                {project?.summary}
+               
+                {/* « Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
                  Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
                   consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-                  sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. » 
+                  sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. »  */}
                 </p>
               </div>
-              </div>
-         
+            </div>
         ))}
         </div>
 

@@ -16,7 +16,7 @@ export default defineType({
         title: 'LanguageUsed',
         description: 'Language Used in Code',
         type: "number",
-        valdidation: (Rule) => Rule.min(0).max(100),
+        validation: (Rule) => Rule.min(0).max(100),
       }),
     ({
         name: 'image',

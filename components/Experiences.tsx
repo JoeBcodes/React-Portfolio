@@ -3,9 +3,11 @@ import {motion} from "framer-motion"
 import ExperienceCard from './ExperienceCard';
 import Image from 'next/image';
 
-type Props = {}
+type Props = {
+  experiences: Experience[];
+};
 
-function Experience({}: Props) {
+function Experiences({experiences}: Props) {
   return (
     <motion.div 
     initial={{ opacity: 0 }}
@@ -20,13 +22,17 @@ function Experience({}: Props) {
       <div className="w-full flex space-x-5 
       overflow-x-scroll p-10 snap-x snap-mandatory
       scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+       {experiences?.map((experience) => (
+        <ExperienceCard key={experience._id} experience={experience} />
+       ))}
+       
+        {/* <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        <ExperienceCard /> */}
       </div>
       </motion.div>
   );
 }
 
-export default Experience
+export default Experiences 
