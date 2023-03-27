@@ -2,6 +2,7 @@ import React from 'react'
 import {motion} from "framer-motion"
 import ExperienceCard from './ExperienceCard';
 import Image from 'next/image';
+import { Experience } from '@/typings';
 
 type Props = {
   experiences: Experience[];

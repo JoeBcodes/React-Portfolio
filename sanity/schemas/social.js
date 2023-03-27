@@ -1,16 +1,16 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'skill',
-  title: 'Skill',
+  name: 'social',
+  title: 'Social',
   type: 'document',
   fields: [
     defineField({
-      name: 'social',
-      title: 'Social',
-      type: "document",
-    }),
-    ({
+    //  ` name: 'social',
+    //   title: 'Social',
+    //   type: "document",
+    // }),
+    // ({`
         name: 'title',
         title: 'Title',
         description: 'Social media platform',

@@ -11,7 +11,7 @@ type Props = {
 }
 
 function Hero({pageInfo}: Props) {
-    const[text, count] = useTypewriter({
+    const[text] = useTypewriter({
         words: [
             `Hi, I'm ${pageInfo?.name}`,
             "Full Stack Developer",

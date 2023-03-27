@@ -25,12 +25,10 @@ type Props = {
   projects: Project[];
   socials: Social[];
 }
-
-//const Home = ({pageInfo, experiences, projects, skills}: Props) => {
-
+  const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
 
 
-export default function Home() {
+
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
     overflow-y-scroll overflow-x-hidden z-0
@@ -39,7 +37,7 @@ export default function Home() {
 
 
       <Head>
-        <title>My Portfolio</title>
+        <title>{pageInfo?.name} - Portfolio</title>
        </Head>
       <Header socials={socials} />
   
@@ -99,3 +97,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       revalidate: 10,
   };
 };
+
+export default Home;
+  
