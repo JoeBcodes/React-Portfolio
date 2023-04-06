@@ -12,16 +12,24 @@ interface Image {
         _type: "reference";
     };
 }
+
+export interface Social extends SanityBody {
+    _type: "social";
+    title: string;
+    url: string;
+}
+
 export interface PageInfo extends SanityBody {
     _type: "pageInfo";
-    address: string;
-    backgroundInformation: string;
-    email: string;
+    name: string;
     role: string;
     heroImage: Image;
-    name: string;
-    phoneNumber: string;
+    backgroundInformation: string;
     profilePic: Image;
+    phoneNumber: string;
+    email: string;
+    address: string;
+    socials: Social[];
 }
 
 export interface Technology extends SanityBody {
@@ -35,17 +43,16 @@ export interface Skill extends SanityBody {
     _type: "skill";
     title: string;
     image: Image;
-    // progress: number;
-
 }
 
 export interface Experience extends SanityBody {
     _type: "experience";
+    jobTitle: string;
     companyImage: Image;
+    company: string;
     dateStarted: date;
     dateEnded: date; 
     isCurrentlyWorkingHere: boolean;
-    jobTitle: string;
     points: string[];
     technologies: Technology[];
 }
@@ -57,12 +64,4 @@ export interface Project extends SanityBody {
     linkToBuild: string;
     summary: string;
     technologies: Technology[];
-    progress: number;
-
-}
-
-export interface Social extends SanityBody {
-    _type: "social";
-    title: string;
-    url: string;
 }

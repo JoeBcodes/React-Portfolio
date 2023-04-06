@@ -11,19 +11,13 @@ export default defineType({
       description: 'Title of skill',
       type: "string",
     }),
-    // ({
-    //     name: 'languageUsed',
-    //     title: 'LanguageUsed',
-    //     description: 'Language Used in Code',
-    //     type: "number",
-    //     validation: (Rule) => Rule.min(0).max(100),
-    //   }),
-    ({
-        name: 'image',
-        title: 'Image',
-        type: "image",
-        options: {
-            hotspot: true,
+  
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: "image",
+      options: {
+         hotspot: true,
         }
     }),
   ],

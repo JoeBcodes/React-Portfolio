@@ -1,4 +1,6 @@
 import {defineField, defineType} from 'sanity'
+import social from './social'
+import skill from './skill'
 
 export default defineType({
   name: 'experience',
@@ -10,49 +12,43 @@ export default defineType({
       title: 'JobTitle',
       type: 'string',
     }),
-    ({
+    defineField({
       name: "companyImage",
       title: "Company Image",
       type: "image",
     }),
-    ({
-    name: "company",
-    title: "Company",
-    type: "text",
+    defineField({
+      name: "company",
+      title: "Company",
+      type: "text",
     }),
-    ({
+    defineField({
       name: "dateStarted",
       title: "DateStarted",
       type: "date",
       }),
-      ({
-        name: "dateEnded",
-        title: "DateEnded",
-        type: "date",
-        }),
-        ({
-          name: "isCurrentlyWorkingHere",
-          title: "IsCurrentlyWorkingHere",
-          type: "boolean",
-        }),
-        ({
-          name: "technologies",
-          title: "Technologies",
-          type: "array",
-          of: [{ type: "reference", to: { type: "skill" } }],
-        }),
-        ({
-          name: "points",
-          title: "Points",
-          type: "array",
-          of: [{ type: "string" }],
-        }),
-        ({
-          name: "socials",
-          title: "Socials",
-          type: "array",
-          of: [{ type: "reference", to: { type: "social" } }],
-        }),
+    defineField({
+      name: "dateEnded",
+      title: "DateEnded",
+      type: "date",
+      }),
+    defineField({
+      name: "isCurrentlyWorkingHere",
+      title: "IsCurrentlyWorkingHere",
+      type: "boolean",
+    }),
+    defineField({
+      name: "points",
+      title: "Points",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "skill" }] }],
+    }),
   ],
 })
  

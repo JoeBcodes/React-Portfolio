@@ -10,12 +10,12 @@ export default defineType({
       title: 'Name',
       type: 'string',
     }),
-    ({
+    defineField({
       name: "role",
       title: "Role",
       type: "string",
     }),
-    ({
+    defineField({
     name: "heroImage",
     title: "Image",
     type: "image",
@@ -23,39 +23,39 @@ export default defineType({
       hotspot: true,
     }
     }),
-    ({
+    defineField({
       name: "backgroundInformation",
       title: "BackgroundInformation",
       type: "string",
       }),
-      ({
-        name: "profilePic",
-        title: "ProfilePic",
-        type: "image",
-        options: {
-          hotspot: true,
+    defineField({
+      name: "profilePic",
+      title: "ProfilePic",
+      type: "image",
+      options: {
+        hotspot: true,
         }
         }),
-        ({
+        defineField({
           name: "phoneNumber",
           title: "PhoneNumber",
           type: "string",
         }),
-        ({
+        defineField({
           name: "email",
           title: "Email",
           type: "string",
         }),
-        ({
+        defineField({
           name: "address",
           title: "Address",
           type: "string",
         }),
-        ({
+        defineField({
           name: "socials",
           title: "Socials",
           type: "array",
-          of: [{ type: "reference", to: { type: "social" } }],
+          of: [{ type: "reference", to: [{ type: "social" }] }],
         }),
   ],
 })
