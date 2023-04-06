@@ -28,4 +28,4 @@ sanity/node_modules
 *.tsbuildinfo
 
 # Dotenv and similar local-only files
-*.local
+*.local 

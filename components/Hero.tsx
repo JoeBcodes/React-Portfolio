@@ -24,18 +24,17 @@ function Hero({pageInfo}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center
     text-center overflow-hidden">
         <BackgroundCircles />
-        <img 
+        <Image 
         className="relative rounded-full h-32 w-32 
         mx-auto object-cover"
         src={urlFor(pageInfo?.heroImage).url()}
-        //"https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-        alt="" />
+        alt="" 
+        />
 
         <div className="z-20">
             <h2 className="text-sm uppercase text-gray-500
              pb-2 tracking-[15px]">
             {pageInfo?.role}
-            {/* Software Engineer */}
             </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold
         px-10">

@@ -1,8 +1,8 @@
 import React from 'react'
 import {motion} from "framer-motion"
-import Image from 'next/image';
 import { Experience } from '@/typings';
 import { urlFor } from '@/sanity';
+import Image from 'next/image';
 
 type Props = {
   experience: Experience;
@@ -26,7 +26,6 @@ function ExperienceCard({ experience }: Props) {
     className="w-32 h-32 rounded-full xl:w-[200px] object-cover
     object-center"
     src={urlFor(experience?.companyImage).url()}
-    //"https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     alt=""
     />
 
@@ -35,35 +34,21 @@ function ExperienceCard({ experience }: Props) {
         <p className="font-bold text-2xl mt-1">lorem epsim bacasum</p>
         <div className="flex space-x-2  my-2">
           {experience.technologies.map((technology) => (
-            <img
+            <Image
             key={technology._id}
             className="h-10 w-10 rounded-full"
             src={urlFor(technology.image).url()}
+            alt=""
             />
 
           ))}
-        {/* <img 
-            className="h-10 w-10 rounded-full"
-            src="https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt=""
-        />
-         <img 
-            className="h-10 w-10 rounded-full"
-            src="https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt=""
-        />
-         <img 
-            className="h-10 w-10 rounded-full"
-            src="https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt=""
-        /> */}
+       
         </div>
         <p className="uppercase py-5 text-gray-300">
            {new Date(experience.dateStarted).toDateString()} = {" "}
            {experience.isCurrentlyWorkingHere
            ? "Present"
           : new Date(experience.dateEnded).toDateString()}
-            {/* Started work...ended */}
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll pr-5
@@ -71,11 +56,6 @@ function ExperienceCard({ experience }: Props) {
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
-            {/* // <li>Summary points</li>
-            // <li>Summary points</li>
-            // <li>Summary points</li>
-            // <li>Summary points</li>
-            // <li>Summary points</li> */}
         </ul>
     </div>
   </article>

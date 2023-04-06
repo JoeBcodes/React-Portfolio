@@ -1,6 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import social from './social'
-import skill from './skill'
 
 export default defineType({
   name: 'experience',

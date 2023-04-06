@@ -1,7 +1,5 @@
-// tsrfce
 import React from 'react'
 import { motion } from "framer-motion"
-import Image from 'next/image';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
 
@@ -33,7 +31,6 @@ function About({pageInfo}: Props) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       src={urlFor(pageInfo?.profilePic).url()}
-      //"https://images.pexels.com/photos/10246934/pexels-photo-10246934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
       md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
      />
@@ -45,11 +42,6 @@ function About({pageInfo}: Props) {
         background
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}
-
-          {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. */}
           </p>
      </div>
     </motion.div>

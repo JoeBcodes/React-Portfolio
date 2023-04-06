@@ -2,14 +2,14 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Project } from '@/typings';
 import { urlFor } from '@/sanity';
+import Image from 'next/image';
 
 type Props = {
   projects: Project[];
 };
 
-function Projects({projects }: Props) {
+function Projects({ projects }: Props) {
 
- // const projects = [1, 2, 3, 4, 5];
   return (
     
     <motion.div 
@@ -39,7 +39,6 @@ function Projects({projects }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
               src={urlFor(project?.image).url()}
-              // "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
               />
          
@@ -50,12 +49,11 @@ function Projects({projects }: Props) {
                     Case Study {i + 1} of {projects.length}:
                   </span>{" "}
                   {project?.title}
-                  {/* UPS clone */}
                 </h4>
 
                 <div className="flex items-center space-x-2 justify-center">
                 {project?.technologies.map((technology) => (
-                  <img 
+                  <Image 
                     className="h-10 w-10"
                     key={technology._id}
                     src={urlFor(technology.image).url()}
@@ -66,11 +64,6 @@ function Projects({projects }: Props) {
 
                 <p className="text-lg text-center md:text-left">
                 {project?.summary}
-               
-                {/* « Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                  consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-                  sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. »  */}
                 </p>
               </div>
             </div>

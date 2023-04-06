@@ -8,7 +8,6 @@ export const config= {
     useCdn: process.env.NODE_ENV === "production",
 };
 
-//Set up the client for fetching data in the getProps page functions
 export const sanityClient = createClient(config);
 
 export const urlFor = (source: any) =>
