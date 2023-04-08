@@ -1,14 +1,13 @@
 import React from 'react'
 import {motion} from "framer-motion"
 import ExperienceCard from './ExperienceCard';
-import Image from 'next/image';
 import { Experience } from '@/typings';
 
 type Props = {
   experiences: Experience[];
 };
 
-function Experiences({experiences}: Props) {
+function WorkExperience({experiences}: Props) {
   return (
     <motion.div 
     initial={{ opacity: 0 }}
@@ -31,4 +30,4 @@ function Experiences({experiences}: Props) {
   );
 }
 
-export default Experiences 
+export default WorkExperience 

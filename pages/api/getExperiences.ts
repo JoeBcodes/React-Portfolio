@@ -7,6 +7,9 @@ const query = groq`
     *[_type == "experience"] {
       ...,
       technologies[] =>
+        image,
+        progress,
+        title
     }
     `;
 

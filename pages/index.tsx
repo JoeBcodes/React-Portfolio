@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import Experiences from '@/components/Experiences'
+import WorkExperience from '@/components/WorkExperience'
 import ContactMe from '@/components/ContactMe'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
@@ -47,7 +47,7 @@ type Props = {
       </section>
 
       <section id="experience" className="snap-center">
-        <Experiences experiences={experiences} />
+        <WorkExperience experiences={experiences} />
       </section>
      
       <section id="skills" className="snap-start">
@@ -76,6 +76,7 @@ type Props = {
     </div>
   );
 };
+export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
@@ -96,5 +97,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default Home;
+//export default Home;
   

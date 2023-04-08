@@ -7,6 +7,9 @@ const query = groq`
     *[_type == "project"] {
       ...,
       technologies[] =>
+      image,
+      progress,
+      title
     }
     `;
 

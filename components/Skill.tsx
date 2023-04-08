@@ -5,7 +5,7 @@ import { urlFor } from '@/sanityconfig';
 
 type Props = {
     skill: Skill;
-    directionLeft ? : boolean;
+    directionLeft?: boolean;
 };
 
 function Skill({ skill, directionLeft }: Props) {
