@@ -13,11 +13,7 @@ import Projects from '@/components/Projects'
 
 import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
 
-import { fetchPageInfo} from "@/utils/fetchPageInfo"
-import { fetchExperiences} from "@/utils/fetchExperiences"
-import { fetchProjects} from "@/utils/fetchProjects"
-import { fetchSkills} from "@/utils/fetchSkills"
-import { fetchSocials} from "@/utils/fetchSocials"
+import {sanityClient} from "@/sanity"
 
 type Props = {
   pageInfo: PageInfo;
@@ -79,11 +75,29 @@ type Props = {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const pageInfo: PageInfo = await client.fetch(`
+    *[_type == "pageInfo"][0]
+`);
+  const skills: Skill[] = await client.fetch(`
+    *[_type == "skill"] 
+`);
+  const projects: Project[] = await client.fetch(`
+    *[_type == "project"]{
+        ...,
+        technologies[]->
+    } 
+`);
+  const socials : Social[] = await client.fetch(   `
+    *[_type == "social"] 
+`
+  );
+  
+  const experiences: Experience = await client.fetch(
+  `*[_type=="experience"]{
+  ...,
+  technologies[]->
+  }`
+  )
 
   return {
     props: {
@@ -92,6 +106,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
+      experiences
     },
       revalidate: 10,
   };
