@@ -19,3 +19,12 @@ export default async function handler(
     const socials: Social[] = await sanityClient.fetch(query);
   res.status(200).json({ socials })
 }
+
+export const fetchSocials = async() => {
+  const res = await fetch(query);
+
+  const data = await res.json()
+  const socials: Social[] = data.socials;
+
+  return socials;
+};

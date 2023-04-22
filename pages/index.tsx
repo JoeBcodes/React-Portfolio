@@ -1,4 +1,4 @@
-import type { GetStaticProps } from "next"
+import { GetStaticProps } from "next"
 import Image from "next/image"
 import Link from 'next/link'
 import Head from 'next/head'
@@ -11,6 +11,10 @@ import ContactMe from '@/components/ContactMe'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 
+import { fetchPageInfo } from '@/pages/api/getPageInfo'
+import { fetchSkills } from './api/getSkills'
+import { fetchProjects } from './api/getProjects'
+import { fetchSocials } from './api/getSocials'
 import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
 
 import {sanityClient} from "@/sanity"

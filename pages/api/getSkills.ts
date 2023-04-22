@@ -18,3 +18,11 @@ export default async function handler(
     const skills: Skill[] = await sanityClient.fetch(query);
   res.status(200).json({ skills });
 }
+
+export const fetchSkills = async() => {
+  const res = await fetch(query);
+
+  const data = await res.json();
+  const skills: Skill[] = data.skills;
+  return skills;
+};

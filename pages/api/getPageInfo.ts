@@ -19,3 +19,13 @@ export default async function handler(
     const pageInfo: PageInfo = await sanityClient.fetch(query);
   res.status(200).json({ pageInfo });
 }
+
+export const fetchPageInfo = async() => {
+  const res = await fetch(query);
+
+  const data = await res.json()
+  const pageInfo: PageInfo = data.pageInfo;
+
+  return pageInfo;
+};
+

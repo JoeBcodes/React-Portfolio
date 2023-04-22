@@ -25,3 +25,14 @@ export default async function handler(
     const experiences: Experience[] = await sanityClient.fetch(query);
   res.status(200).json({ experiences });
 }
+
+
+export const fetchExperiences = async() => {
+  const res = await fetch(query);
+
+  const data = await res.json()
+  const experiences: Experience[] = data.experiences;
+  return experiences;
+};
+
+
