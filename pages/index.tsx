@@ -75,24 +75,24 @@ type Props = {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await client.fetch(`
+  const pageInfo: PageInfo = await sanityClient.fetch(`
     *[_type == "pageInfo"][0]
 `);
-  const skills: Skill[] = await client.fetch(`
+  const skills: Skill[] = await sanityClient.fetch(`
     *[_type == "skill"] 
 `);
-  const projects: Project[] = await client.fetch(`
+  const projects: Project[] = await sanityClient.fetch(`
     *[_type == "project"]{
         ...,
         technologies[]->
     } 
 `);
-  const socials : Social[] = await client.fetch(   `
+  const socials : Social[] = await sanityClient.fetch(   `
     *[_type == "social"] 
 `
   );
   
-  const experiences: Experience = await client.fetch(
+  const experiences: Experience = await sanityClient.fetch(
   `*[_type=="experience"]{
   ...,
   technologies[]->
@@ -106,11 +106,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
-      experiences
     },
       revalidate: 10,
   };
-};
-
-//export default Home;
-  
+}

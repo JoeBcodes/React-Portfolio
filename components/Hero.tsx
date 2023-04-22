@@ -4,7 +4,7 @@ import BackgroundCircles from './BackgroundCircles'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PageInfo } from "../typings";
-import { urlFor } from '@/sanityconfig'
+import { urlFor } from '@/sanity'
 
 type Props = {
     pageInfo: PageInfo
